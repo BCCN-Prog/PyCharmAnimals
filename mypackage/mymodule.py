@@ -8,7 +8,7 @@ class Animal:
 
         # instance attributes
         self.name = name
-        self.last_ate = None
+        self.last_meal = None
 
         print("Created new animal named " + name)
 
@@ -18,8 +18,8 @@ class Animal:
         :param food: Nom Nom
 
         """
-        self.last_ate = food
-        print(self.name + " noms on " + self.last_ate)
+        self.last_meal = food
+        print(self.name + " noms on " + self.last_meal)
 
     def poop(self):
         """ Sometimes...
@@ -28,8 +28,9 @@ class Animal:
 
         """
         print(self.name + " poops!!!")
-        self.last_ate = None
-        return 'That was once ' + self.last_ate
+        crap = self.last_meal
+        self.last_meal = None
+        return 'That was once ' + crap
 
 
 class Dog(Animal):
