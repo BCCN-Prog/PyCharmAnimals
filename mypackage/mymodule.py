@@ -1,8 +1,8 @@
 """ Module containing a silly example of OOP """
 
-class Animal:
-    """ Superclass defining an animal """
 
+class Animal(object):
+    """ Superclass defining an animal """
     def __init__(self, name):
         """Constructs an animal"""
 
@@ -12,7 +12,7 @@ class Animal:
 
         print("Created new animal named " + name)
 
-    def eat(self, food ):
+    def eat(self, food):
         """ Don`t let your little guy starve!
 
         :param food: Nom Nom
@@ -21,7 +21,7 @@ class Animal:
         self.last_meal = food
         print(self.name + " noms on " + self.last_meal)
 
-    def poop(self):
+    def defecate(self):
         """ Sometimes...
 
         :return: Better pick this up!
@@ -48,6 +48,9 @@ class Dog(Animal):
     def teach(self, trick):
         self.tricks.add(trick)
 
+    def fetch_the_ball(self):
+        print('Good Boy!')
+
 
 class Cat(Animal):
     """ Super cute cat! """
@@ -60,12 +63,17 @@ class Cat(Animal):
 def main():
     bill = Cat("Bill the Cat", "orange and white")
     bill.eat('cat food')
+    
+    peter = 42
 
     walter = Dog()
     walter.name = "Walter"
     walter.breed = "Pug"
     walter.eat("pizza")
-    walter.poop()
+    walter.defecate()
+    
+    walter.fetch_the_ball()
+
 
     walter.teach('play dead')
     walter.teach('fetch ball')
